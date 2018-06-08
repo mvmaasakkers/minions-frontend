@@ -10,6 +10,16 @@
 
 @Model.Name<br />
 Points: @Model.Points<br /><br />
+<h3>Challenges</h3>
+<table width="100%">
+    <TR><th>Description</th><th>Percentage completed</th></TR>
+    @{
+        foreach (var cha in Model.Challenges)
+        {
+            <TR><td>@cha.Description</td><td align="right">@cha.PercentageCompleted</td></TR>
+        }
+    }
+</table>
 <h3>Achieved goals</h3>
 <table width="100%">
     <TR><th>ID</th><th>Date</th><th>Description</th><th>Points</th></TR>

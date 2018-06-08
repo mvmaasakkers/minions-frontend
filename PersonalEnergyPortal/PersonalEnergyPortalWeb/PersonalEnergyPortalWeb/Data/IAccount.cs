@@ -1,9 +1,14 @@
+using PersonalEnergyPortalWeb.Data;
 using System.Collections.Generic;
 
-public interface IAccount
+namespace PersonalEnergyPortalWeb.Data
 {
-    int Identifier {get;}
-    string Name { get; }
-    int Points {get;}
-    IEnumerable<IEvent> GetEvents();
+    public interface IAccount
+    {
+        int Identifier { get; }
+        string Name { get; }
+        int Points { get; }
+        IEnumerable<IEvent> GetEvents();
+        IEnumerable<IChallengeProgress> GetChallenges();
+    }
 }

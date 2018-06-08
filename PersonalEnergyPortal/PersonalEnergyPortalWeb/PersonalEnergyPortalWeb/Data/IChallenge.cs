@@ -1,11 +1,13 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PersonalEnergyPortalWeb.Data
 {
-    public interface IEvent
+    public interface IChallenge
     {
         int Identifier { get; }
-        DateTime Date { get; }
         string Description { get; }
         int Points { get; }
     }

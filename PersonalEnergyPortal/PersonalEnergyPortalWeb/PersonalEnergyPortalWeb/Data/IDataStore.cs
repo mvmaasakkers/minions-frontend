@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 
-public interface IDataStorage
+namespace PersonalEnergyPortalWeb.Data
 {
-    IAccount GetAccount(int identifier);
-    IEnumerable<IAccount> GetAccounts();
-    
+    public interface IDataStorage
+    {
+        IAccount GetAccount(int identifier);
+        IEnumerable<IAccount> GetAccounts();
+        IEnumerable<IChallenge> GetChallenges();
+
+    }
 }

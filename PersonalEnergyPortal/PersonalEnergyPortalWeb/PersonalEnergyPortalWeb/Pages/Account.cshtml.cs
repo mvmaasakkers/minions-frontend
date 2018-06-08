@@ -15,12 +15,20 @@ namespace PersonalEnergyPortalWeb.Pages
         public string Description;
         public int Points;
     }
+
+    public class ChallengePage
+    {
+        public string Description;
+        public string PercentageCompleted;
+    }
     public class AccountModel : PageModel
     {
         public string Name;
         public int Points;
 
         public List<EventPage> Events;
+
+        public List<ChallengePage> Challenges;
 
         public void OnGet(int id)
         {
@@ -32,6 +40,13 @@ namespace PersonalEnergyPortalWeb.Pages
             foreach(var eve in account.GetEvents())
             {
                 Events.Add(new EventPage() { Identifier = eve.Identifier, Date = string.Format("{0:dd-MM-yyyy}",eve.Date), Description = eve.Description, Points = eve.Points });
+            }
+            var myChallenges = account.GetChallenges();
+            Challenges = new List<ChallengePage>();
+            foreach(var cha in DataStore.GetChallenges())
+            {
+                var progress = myChallenges.Where(c => c.ChallengeIdentifier == cha.Identifier).Sum(c => c.Progress);
+                Challenges.Add(new ChallengePage() { Description = cha.Description, PercentageCompleted = string.Format("{0}%",progress)});
             }
         }
     }
