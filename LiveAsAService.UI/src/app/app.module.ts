@@ -7,11 +7,14 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginService } from './services/login.service';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthModule } from './services/auth/auth.module';
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './services/gaurd.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '**', component: DashboardComponent }
 ];
 
@@ -23,10 +26,13 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    AuthModule.forRoot("YOURKEY_HERE"),
     NgbModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
   providers: [
+    AuthGuard,
     LoginService
   ],
   bootstrap: [AppComponent]
