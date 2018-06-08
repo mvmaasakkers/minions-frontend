@@ -1,0 +1,26 @@
+﻿@page
+@model PersonalEnergyPortalWeb.Pages.AccountModel
+@{
+    ViewData["Title"] = "Account";
+}
+
+<h2>Account</h2>
+
+<a href="/">Return</a><br />
+
+@Model.Name<br />
+Points: @Model.Points<br /><br />
+<h3>Achieved goals</h3>
+<table width="100%">
+    <TR><th>ID</th><th>Date</th><th>Description</th><th>Points</th></TR>
+    @{
+        foreach (var eve in Model.Events)
+        {
+            <TR><td>@eve.Identifier</td><td>@eve.Date</td><td>@eve.Description</td><td align="right">@eve.Points</td></TR>
+        }
+    }
+    <TR><td></td><td></td><td></td><td align="right">----------</td></TR>
+    <TR><td></td><td></td><td></td><td align="right">@Model.Points</td></TR>
+</table>
+
+
