@@ -1,3 +1,3 @@
-<navigation *ngIf="!router.isActive('home')"></navigation>
+<navigation *ngIf="!router.isActive('home') && !router.isActive('login')"></navigation>
 <alert></alert>
 <router-outlet></router-outlet>
