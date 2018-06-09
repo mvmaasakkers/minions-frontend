@@ -2,8 +2,6 @@ import { Injectable, InjectionToken, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ENDPOINT } from './login.service';
-import { IPoints } from './IPoints';
-import { IUser } from './IUser';
 import { IReponse } from './IResponse';
 
 @Injectable({
