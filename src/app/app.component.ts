@@ -7,12 +7,12 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  router: Router;
   navigationVisible: boolean;
   title = 'app';
 
-    constructor(private router: Router, private activeRoute: ActivatedRoute){
-      
+    constructor(router: Router, private activeRoute: ActivatedRoute){
+      this.router = router;
     }
 
 }
