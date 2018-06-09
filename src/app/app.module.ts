@@ -11,10 +11,10 @@ import { AuthModule } from './services/auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './services/gaurd.service';
 import { DevicesComponent } from "./devices/devices.component";
-import { Angular2FontawesomeModule } from "angular2-fontawesome";
 import { TransactionsComponent } from "./transactions/transactions.component";
 import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -39,8 +39,7 @@ const routes: Routes = [
     HttpClientModule,
     AuthModule.forRoot("YOURKEY_HERE"),
     NgbModule.forRoot(),
-    RouterModule.forRoot(routes),
-      Angular2FontawesomeModule
+    RouterModule.forRoot(routes)
   ],
   providers: [
     AuthGuard,
