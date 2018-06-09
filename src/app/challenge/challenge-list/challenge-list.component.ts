@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChallengeService } from '../../services/challenge.service';
 import { IChallenge } from '../../services/IChallenge';
+import { IAlert, AlertService } from '../../services/alert.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'challenge-list',
@@ -11,14 +13,27 @@ export class ChallengeListComponent implements OnInit {
 
   public challenges: IChallenge[];
 
-  constructor(private challengeService: ChallengeService) { }
+  constructor(private challengeService: ChallengeService, private alertService: AlertService) { }
 
   ngOnInit() {
     var l: IChallenge[];
-    this.challengeService.getChallengeList().subscribe(response => {
-        console.log("r = ", response);
-        this.challenges = response;
-    })
+    this.getChallenges();
   }
 
+  getChallenges(){
+    this.challengeService.getChallengeList().subscribe(response => {
+      this.challenges = response;
+    });
+  }
+
+  collect(challenge: IChallenge){
+    this.challengeService.collect(challenge).subscribe(response => {
+      if(response.success){
+        this.alertService.success(response.message);
+      } 
+    }, (error : any) => {
+      this.alertService.error("Somthing went wrong!!");
+    });
+    this.getChallenges();
+  }
 }
