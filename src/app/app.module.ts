@@ -49,7 +49,7 @@ const routes: Routes = [
       HomeComponent,
       NavigationComponent,
       ConvertComponent,
-      ConvertAbnComponent
+      ConvertAbnComponent,
       AlertComponent
   ],
   imports: [
