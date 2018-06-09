@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProgressCounterService } from './services/progress-counter.service';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
+import { NavigationComponent } from './navigation/navigation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -37,7 +38,8 @@ const routes: Routes = [
       DevicesComponent,
       CounterComponent,
       TransactionsComponent,
-      HomeComponent
+      HomeComponent,
+      NavigationComponent
   ],
   imports: [
     BrowserModule,
