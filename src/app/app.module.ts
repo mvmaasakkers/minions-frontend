@@ -14,9 +14,13 @@ import { DevicesComponent } from "./devices/devices.component";
 import { TransactionsComponent } from "./transactions/transactions.component";
 import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProgressCounterService } from './services/progress-counter.service';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
@@ -31,7 +35,8 @@ const routes: Routes = [
     DashboardComponent,
       DevicesComponent,
       CounterComponent,
-      TransactionsComponent
+      TransactionsComponent,
+      HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ const routes: Routes = [
   ],
   providers: [
     AuthGuard,
+    ProgressCounterService,
     LoginService,
     { provide: ENDPOINT, useValue: 'http://api.styfee.com' }
   ],
