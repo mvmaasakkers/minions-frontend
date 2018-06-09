@@ -28,9 +28,8 @@
                         <h3 class="text-center header-title mt-0 m-b-15">
                             SAVING TARGETS
                         </h3>
-
                         <div class="p-3">
-                            <counter [value]="user.score.current"></counter>
+                            <counter *ngIf="!isLoading" [value]="user.score.current"></counter>
                             <ngb-progressbar class="progressCounter m-b-10" type="custom" min="0" max="100" [value]="80"></ngb-progressbar>
                             <p class="float-right">125 points to go!</p>
                         </div>

@@ -15,7 +15,7 @@ export class ConvertAbnComponent implements OnInit {
   }
 
   deduct(cost: number) {
-    this.deductCreditsService.deduct(cost);
+    this.deductCreditsService.deduct(cost).subscribe(r => { console.log("r=", r)});
   }
 
   rewards = [
