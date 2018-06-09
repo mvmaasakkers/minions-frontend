@@ -25,6 +25,8 @@ import { DeviceService } from './services/device.service';
 import { DeductCreditsService } from './services/deduct-credits.service'
 import { ConvertComponent } from './convert/convert.component';
 import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component';
+import { ChallengeListComponent } from './challenge/challenge-list/challenge-list.component';
+import { OrderByPipe } from './pipes/sort.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -42,6 +44,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    OrderByPipe,
     AppComponent,
     LoginComponent,
     DashboardComponent,
@@ -52,7 +55,8 @@ const routes: Routes = [
       NavigationComponent,
       ConvertComponent,
       ConvertAbnComponent,
-      AlertComponent
+      AlertComponent,
+      ChallengeListComponent,
   ],
   imports: [
     ChartsModule,
