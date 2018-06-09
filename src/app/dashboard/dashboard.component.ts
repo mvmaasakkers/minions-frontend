@@ -12,13 +12,17 @@ import { Observable } from 'rxjs';
 export class DashboardComponent implements OnInit {
 
     user: IUser;
+    isLoading: boolean = true;
 
     constructor(private userService: UserService, private bankService: BankService, private alertService: AlertService) { }
 
     ngOnInit() { 
+        
         this.userService.get().subscribe(response => {
             this.user = response;
-        });
+        }, () => {}, () => this.isLoading = false);
+
+
         this.bankService.sync().subscribe(response => {
             if(response.success) {
                 this.alertService.success(response.message);
