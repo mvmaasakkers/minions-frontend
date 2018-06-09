@@ -1,7 +1,27 @@
 
-<h2>ABN</h2>
-<ul>
-  <li *ngFor="let reward of rewards" (click)="deduct(reward.cost)">
-    {{ reward.name}}   {{ reward.cost}}
-  </li>
-</ul>
+
+<div class="card m-b-30">
+  <div class="card-body">
+
+    <h4 class="header-title mt-0 m-b-0">
+      ABN AMRO
+    </h4>
+    <p class="">Save on your bankproducts like your mortgage or ensurance</p>
+
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tbody>
+        <tr *ngFor="let reward of rewards" (click)="deduct(reward.cost)">
+          <td>
+            <h6>{{ reward.name}}</h6>
+          </td>
+          <td>
+            <h6>{{ reward.cost}}</h6>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
