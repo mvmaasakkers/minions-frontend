@@ -10,12 +10,14 @@ import { Observable } from 'rxjs';
     templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
-    options = { tooltips: { enabled: false } }
+    options = { tooltips: { enabled: false },
+        cutoutPercentage: 75
+    }
     public doughnutChartLabels:string[] = [];
     public doughnutChartData:number[] = [80, 20];
     public lineChartColors:Array<any> = [
         {
-            backgroundColor: ["rgba(2,139,69, 0.6)","rgba(255,255,255, 0.6)"],
+            backgroundColor: ["rgba(47,213,143)","rgba(228,233,236)"],
             borderColor: '#fff',
             pointBackgroundColor: "rgba(0,255,0, 0.6)",
             pointBorderColor: '#fff',
