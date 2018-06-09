@@ -18,6 +18,7 @@ import { ProgressCounterService } from './services/progress-counter.service';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
