@@ -5,6 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HuisComponent } from './huis/huis.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { LoginService } from './services/login.service';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './services/auth/auth.module';
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'huis', component: HuisComponent, },
+  { path: 'navigation', component: NavigationComponent, },
   { path: '**', component: DashboardComponent }
 ];
 
@@ -22,7 +26,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    HuisComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -15,24 +15,3 @@ export class NavigationComponent implements OnInit {
     }
 
 }
-
-export const routerConfig: Routes = [
-    {
-        path: 'dashboard',
-        component: DashboardComponent
-    },
-    {
-        path: 'huis',
-        component: HuisComponent
-    }
-    {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-    },
-    {
-        path: '**',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-    }
-];

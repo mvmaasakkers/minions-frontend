@@ -5,11 +5,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HuisComponent } from './huis/huis.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'dashboard', component: DashboardComponent }
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'huis', component: HuisComponent }
+
 ];
 
 @NgModule({
