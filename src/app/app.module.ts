@@ -10,7 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './services/auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './services/gaurd.service';
-import {DevicesComponent} from "./devices/devices.component";
+import { DevicesComponent } from "./devices/devices.component";
+import { Angular2FontawesomeModule } from "angular2-fontawesome";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
     FormsModule,
     AuthModule.forRoot("YOURKEY_HERE"),
     NgbModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+      Angular2FontawesomeModule
   ],
   providers: [
     AuthGuard,

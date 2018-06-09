@@ -24,7 +24,9 @@
             ],
             "styles": [
               "src/assets/css/bootstrap.min.css",
-              "src/assets/scss/style.scss"
+              "src/assets/scss/style.scss",
+              "src/assets/css/fontawesome.min.css",
+              "src/assets/css/fa-light.css",
             ],
             "scripts": []
           },
