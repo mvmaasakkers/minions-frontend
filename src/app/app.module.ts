@@ -17,6 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
 import { NavigationComponent } from './navigation/navigation.component';
+import { AlertService } from './services/alert.service';
+import { AlertComponent } from './alert/alert.component';
+import { UserService } from './services/user.service';
+import { DeviceService } from './services/device.service';
 import { ConvertComponent } from './convert/convert.component';
 import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component';
 
@@ -30,6 +34,7 @@ const routes: Routes = [
   { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
   { path: 'convert', component: ConvertComponent, canActivate: [AuthGuard] }, 
   { path: 'convert/abn', component: ConvertAbnComponent, canActivate: [AuthGuard] }, 
+    {path: 'home' , component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', component: DashboardComponent }
 ];
 
@@ -44,7 +49,8 @@ const routes: Routes = [
       HomeComponent,
       NavigationComponent,
       ConvertComponent,
-      ConvertAbnComponent
+      ConvertAbnComponent,
+      AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,10 @@ const routes: Routes = [
     AuthGuard,
     LoginService,
     { provide: ENDPOINT, useValue: 'http://api.styfee.com' },
-    BankService
+    BankService,
+    AlertService,
+    UserService,
+    DeviceService,
   ],
   bootstrap: [AppComponent]
 })

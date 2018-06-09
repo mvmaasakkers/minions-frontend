@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BankService } from '../services/bank.service';
+import { AlertService } from '../services/alert.service';
+import { UserService } from '../services/user.service';
+import { IUser } from '../services/IUser';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'dashboard',
@@ -7,12 +11,17 @@ import { BankService } from '../services/bank.service';
 })
 export class DashboardComponent implements OnInit {
 
-    constructor(private bankService: BankService) { }
+    user: IUser;
+
+    constructor(private userService: UserService, private bankService: BankService, private alertService: AlertService) { }
 
     ngOnInit() { 
+        this.userService.get().subscribe(response => {
+            this.user = response;
+        });
         this.bankService.sync().subscribe(response => {
             if(response.success) {
-                alert(response.message);
+                this.alertService.success(response.message);
             }
         })
     }
