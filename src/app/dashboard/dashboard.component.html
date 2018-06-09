@@ -14,7 +14,14 @@
                         </h3>
 
                         <div class="p-3">
-
+                            <div style="display: block">
+                                <canvas baseChart
+                                        [data]="doughnutChartData"
+                                        [labels]="doughnutChartLabels"
+                                        [chartType]="doughnutChartType"
+                                        (chartHover)="chartHovered($event)"
+                                        (chartClick)="chartClicked($event)"></canvas>
+                            </div>
                         </div>
 
                     </div>
@@ -43,10 +50,40 @@
 
         </div>
 
+        <div class="card bg-white m-b-30">
+            <div class="card-body">
+
+                <h3 class="header-title mt-0 pb-3">
+                    Hy household
+                </h3>
+
+                <div class="col-sm-12 text-center">
+                    <a href="/devices" class="text-link">More information</a>
+                </div>
+
+            </div>
+
+            <div class="card-body bg-primary">
+                <div class="row">
+
+                    <div class="col-6 align-self-center">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6 text-center">
+                                <canvas id="partly-cloudy-day" width="70" height="70"></canvas>
+                                <h6 class="text-white">SUNDAY <span>25<sup>th</sup></span></h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
         <div class="card m-b-30">
             <div class="card-body">
 
-                <a href="" class="btn btn-outline-secondary wave-effect float-right">Add device</a>
+                <button type="button" id="addDevice" class="btn btn-outline-secondary wave-effect float-right">Add device</button>
 
                 <h3 class="header-title mt-0 pb-3">
                     Popular devices

@@ -14,6 +14,7 @@ import { DevicesComponent } from "./devices/devices.component";
 import { TransactionsComponent } from "./transactions/transactions.component";
 import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -39,7 +40,8 @@ const routes: Routes = [
     HttpClientModule,
     AuthModule.forRoot("YOURKEY_HERE"),
     NgbModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+      ChartsModule
   ],
   providers: [
     AuthGuard,
