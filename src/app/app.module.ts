@@ -12,12 +12,13 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './services/gaurd.service';
 import { DevicesComponent } from "./devices/devices.component";
 import { Angular2FontawesomeModule } from "angular2-fontawesome";
-
+import { TransactionsComponent } from "./transactions/transactions.component";
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
+    { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
   { path: '**', component: DashboardComponent }
 ];
 
@@ -26,7 +27,8 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-      DevicesComponent
+      DevicesComponent,
+      TransactionsComponent
   ],
   imports: [
     BrowserModule,
