@@ -16,7 +16,6 @@ import { DevicesComponent } from "./devices/devices.component";
 import { TransactionsComponent } from "./transactions/transactions.component";
 import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProgressCounterService } from './services/progress-counter.service';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
 
@@ -54,7 +53,6 @@ const routes: Routes = [
   ],
   providers: [
     AuthGuard,
-    ProgressCounterService,
     LoginService,
     { provide: ENDPOINT, useValue: 'http://api.styfee.com' },
     BankService
