@@ -38,10 +38,7 @@ export class TokenInterceptor implements HttpInterceptor {
             catchError(error => {
                 if (error instanceof HttpErrorResponse) {
                     if (error.status === 401) {
-                        return auth.refreshToken().pipe(
-                            map(this.setHeaders(request)), 
-                            mergeMap(req => next.handle(request))
-                        );
+                        
                     }
                 }
                 return Observable.throw(error);

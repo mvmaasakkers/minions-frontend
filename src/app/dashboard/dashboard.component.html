@@ -30,22 +30,9 @@
                         </h3>
 
                         <div class="p-3">
-                            <div class="savingsCounter">
-
-                                <span>0</span>
-                                <span>2</span>
-                                <span>4</span>
-                                <span>1</span>
-                                <span>0</span>
-
-                            </div>
-
-                            <div class="progress progressCounter m-b-10">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-
+                            <counter value="555555"></counter>
+                            <ngb-progressbar class="progressCounter m-b-10" type="custom" min="0" max="100" [value]="80"></ngb-progressbar>
                             <p class="float-right">125 points to go!</p>
-
                         </div>
 
                         <a class="footerButton">Convert your points</a>
