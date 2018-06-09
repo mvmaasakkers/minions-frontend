@@ -12,9 +12,13 @@ export class CounterComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { 
-        this.value.toString()
     }
 
 
-
+    getLetters(){
+        if(this.value) {
+            return this.value.toString().split('');
+        }
+        return ["0"];
+    }
 }
