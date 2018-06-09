@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { IDevice } from './IDevice';
 import { Observable } from 'rxjs';
-import "rxjs/add/observable/of";
 
 @Injectable()
 export class DeviceService {
@@ -19,6 +18,14 @@ export class DeviceService {
     constructor(private http: HttpClient) { }
 
     get() {
-        return Observable.of(this.devices);
-    }
+        return Observable.create(observer => {
+            setTimeout(() => {
+              observer.next(this.devices);
+              console.log("am done");
+              observer.complete(); // to show we are done with our processing
+             // observer.error(new Error("error message"));
+            }, 2000);
+      
+          })
+        }
 }

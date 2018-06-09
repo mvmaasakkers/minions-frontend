@@ -20,6 +20,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AlertService } from './services/alert.service';
 import { AlertComponent } from './alert/alert.component';
 import { UserService } from './services/user.service';
+import { DeviceService } from './services/device.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -59,7 +60,8 @@ const routes: Routes = [
     { provide: ENDPOINT, useValue: 'http://api.styfee.com' },
     BankService,
     AlertService,
-    UserService
+    UserService,
+    DeviceService,
   ],
   bootstrap: [AppComponent]
 })
