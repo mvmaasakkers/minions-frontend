@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Reward } from '../reward';
+import { DeductCreditsService } from '../../services/deduct-credits.service';
 
 @Component({
   selector: 'app-convert-abn',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConvertAbnComponent implements OnInit {
 
-  constructor() { }
+  constructor(private deductCreditsService: DeductCreditsService) { }
 
   ngOnInit() {
   }
 
+  deduct(cost: number) {
+    this.deductCreditsService.deduct(cost);
+  }
+
+  rewards = [
+    new Reward("0.2% rente korting", 100),
+    new Reward("1% korting op verzekering", 200),
+    new Reward("credit card wallet", 20)
+  ]
 }

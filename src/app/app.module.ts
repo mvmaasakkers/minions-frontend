@@ -21,6 +21,7 @@ import { AlertService } from './services/alert.service';
 import { AlertComponent } from './alert/alert.component';
 import { UserService } from './services/user.service';
 import { DeviceService } from './services/device.service';
+import { DeductCreditsService } from './services/deduct-credits.service'
 import { ConvertComponent } from './convert/convert.component';
 import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component';
 
@@ -68,6 +69,7 @@ const routes: Routes = [
     AlertService,
     UserService,
     DeviceService,
+    DeductCreditsService
   ],
   bootstrap: [AppComponent]
 })
