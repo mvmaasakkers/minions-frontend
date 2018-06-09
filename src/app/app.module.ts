@@ -10,7 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './services/auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './services/gaurd.service';
-import {DevicesComponent} from "./devices/devices.component";
+import { DevicesComponent } from "./devices/devices.component";
+import { Angular2FontawesomeModule } from "angular2-fontawesome";
+import { TransactionsComponent } from "./transactions/transactions.component";
 import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
@@ -37,7 +39,8 @@ const routes: Routes = [
     HttpClientModule,
     AuthModule.forRoot("YOURKEY_HERE"),
     NgbModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+      Angular2FontawesomeModule
   ],
   providers: [
     AuthGuard,
