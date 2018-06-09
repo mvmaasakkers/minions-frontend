@@ -5,15 +5,40 @@
 
         <div class="row">
 
+            <div class="col-md-12">
+                <div class="card bg-success m-b-30">
+                    <div class="card-body text-center">
+                        <span class="icon text-white"><i class="fal fa-star"></i></span>
+                        <h6 class="text-white">Your neighborhood improved 5% last month in separating waste, good job!!</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
             <div class="col-md-12 col-lg-6 col-xl-6">
                 <div class="card m-b-30">
                     <div class="card-body">
 
-                        <h3 class="text-center header-title mt-0 m-b-15">
+                        <h3 class="text-center header-title mt-0 m-b-0">
                             MY HOUSEHOLD ENERGYLABEL
                         </h3>
+                        <p class="text-center text-success"><strong>You have a A+ energy rating</strong></p>
 
-                        <canvas height="340" baseChart
+                        <div class="chartWrapper">
+
+                            <div class="house-info">
+                                <div class="avatar">
+                                    <img src="assets/images/house-3.jpg" alt="My House">
+                                </div>
+
+                                <h4 class="text-center">Saturnusstraat 14</h4>
+                                <p class="text-center">1033VT Amsterdam</p>
+                            </div>
+
+                            <canvas height="340" baseChart
                                 [data]="doughnutChartData"
                                 [labels]="doughnutChartLabels"
                                 [chartType]="doughnutChartType"
@@ -21,6 +46,7 @@
                                 [legend]="false"
                                 [options]="options"
                                 ></canvas>
+                        </div>
 
                         <h3 class="header-title">
                             GETGREEN MILESTONES
@@ -81,7 +107,7 @@
                     <table class="table table-hover">
                         <tbody>
                         <tr>
-                            <td width="40"><img class="rounded-circle" src="assets/images/house-1.jpg" alt="Sonos speakers : livingroom" width="40"></td>
+                            <td width="40"><img class="rounded-circle" src="assets/images/house-1.jpg" alt="House 1" width="40"></td>
                             <td>
                                 <h6 class="float-left">Family Jansen</h6>
                             </td>
@@ -92,7 +118,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td width="40"><img class="rounded-circle" src="assets/images/house-2.jpg" alt="Sonos speakers : livingroom" width="40"></td>
+                            <td width="40"><img class="rounded-circle" src="assets/images/house-2.jpg" alt="House 2" width="40"></td>
                             <td><h6 class="float-left">Family Evers</h6></td>
                             <td>
                                 <h6 class="m-0 float-left text-center text-success">
@@ -101,7 +127,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td width="40"><img class="rounded-circle" src="assets/images/house-3.jpg" alt="Sonos speakers : livingroom" width="40"></td>
+                            <td width="40"><img class="rounded-circle" src="assets/images/house-3.jpg" alt="House 3" width="40"></td>
                             <td><h6 class="float-left">Your family</h6></td>
                             <td>
                                 <h6 class="m-0 float-left text-center text-success">
