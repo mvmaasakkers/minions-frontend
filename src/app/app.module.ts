@@ -5,6 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginService, ENDPOINT } from './services/login.service';
+import { NavigationComponent } from './navigation/navigation.component';
 import { HuisComponent } from './huis/huis.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginService, ENDPOINT } from './services/login.service';
@@ -32,6 +34,9 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     DashboardComponent,
+      DevicesComponent,
+      CounterComponent,
+      TransactionsComponent
     HuisComponent,
     NavigationComponent,
     CounterComponent,
