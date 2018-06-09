@@ -1,5 +1,7 @@
 
 <h2>ABN</h2>
 <ul>
-  <li>.2% procent hypotheek korting</li>
+  <li *ngFor="let reward of rewards" (click)="deduct(reward.cost)">
+    {{ reward.name}}   {{ reward.cost}}
+  </li>
 </ul>
