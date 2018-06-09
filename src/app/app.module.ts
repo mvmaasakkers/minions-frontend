@@ -14,8 +14,15 @@ import { DevicesComponent } from "./devices/devices.component";
 import { TransactionsComponent } from "./transactions/transactions.component";
 import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProgressCounterService } from './services/progress-counter.service';
 import { HomeComponent } from './home/home.component';
+import { BankService } from './services/bank.service';
+import { NavigationComponent } from './navigation/navigation.component';
+import { AlertService } from './services/alert.service';
+import { AlertComponent } from './alert/alert.component';
+import { UserService } from './services/user.service';
+import { DeviceService } from './services/device.service';
+import { ConvertComponent } from './convert/convert.component';
+import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -23,8 +30,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-    { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
-    { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+  { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
+  { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+  { path: 'convert', component: ConvertComponent, canActivate: [AuthGuard] }, 
+  { path: 'convert/abn', component: ConvertAbnComponent, canActivate: [AuthGuard] }, 
+    {path: 'home' , component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', component: DashboardComponent }
 ];
 
@@ -36,7 +46,11 @@ const routes: Routes = [
       DevicesComponent,
       CounterComponent,
       TransactionsComponent,
-      HomeComponent
+      HomeComponent,
+      NavigationComponent,
+      ConvertComponent,
+      ConvertAbnComponent,
+      AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +62,12 @@ const routes: Routes = [
   ],
   providers: [
     AuthGuard,
-    ProgressCounterService,
     LoginService,
-    { provide: ENDPOINT, useValue: 'http://api.styfee.com' }
+    { provide: ENDPOINT, useValue: 'http://api.styfee.com' },
+    BankService,
+    AlertService,
+    UserService,
+    DeviceService,
   ],
   bootstrap: [AppComponent]
 })
