@@ -16,8 +16,10 @@ export class CounterComponent implements OnInit {
 
     ngOnInit() { 
         //this.value.toString()
-        console.log('here');
-        //this.progressCounterService.progress();
+        var a = this.progressCounterService.progress().subscribe(data => { 
+            console.log('v = ', data);
+        });
+        console.log('here', a);
         this.value.toString()
     }
 
