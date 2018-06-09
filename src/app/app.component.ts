@@ -9,5 +9,8 @@ export class AppComponent {
   
   title = 'app';
 
+    constructor(private router: Router){
+
+    }
 
 }
