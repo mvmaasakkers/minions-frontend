@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { IReponse } from './IResponse';
-import { IUser } from './IUser';
+import { IToken } from './IToken';
 
 export const ENDPOINT = new InjectionToken<string>('endpoint');
 
@@ -17,10 +17,10 @@ export class LoginService {
         return this.http.post<IReponse>(`${this.endpoint}/v1/user`, {username: username, password: password});
     }
 
-    login(username: string, password: string) : Observable<IUser> {
+    login(username: string, password: string) : Observable<IToken> {
         var url = `${this.endpoint}/v1/token`;
         console.log(url);
-       return this.http.post<IUser>(url, {username: username, password: password})
+       return this.http.post<IToken>(url, {username: username, password: password})
         .pipe(
             map(user => {
                 if(user && user.token){

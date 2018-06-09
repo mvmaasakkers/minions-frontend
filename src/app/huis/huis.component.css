@@ -1,3 +1,7 @@
+.wrapper {
+  padding-top: 0px;
+}
+
 .my-devices .col-4 {
   padding-right: 0px !important;
 }
@@ -69,7 +73,38 @@
 
 .img {
   background-color: grey;
+  background-image: url(../../assets/images/huis.png);
   height: 249px;
   width: 375px;
   margin-bottom: 30px;
+}
+
+.button-items button {
+  margin-left: 8px;
+  height: 91px;
+  width: 28%;
+}
+
+.button-items {
+  margin-bottom: -8px;
+  width: 100%;
+  margin-left: 6px;
+}
+
+.btn-outline-secondary {
+  color: #D7D3D5;
+  font-size: 12px !important;
+  padding: 2px;
+  border: 1px solid #D7D3D5;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-outline-secondary.dropdown-toggle {
+  color: #5b6be8;
+  background-color: #fff;
+  border-color: #5b6be8;
 }

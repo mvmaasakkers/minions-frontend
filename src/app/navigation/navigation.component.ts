@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'navigation',
-    templateUrl: 'navigation.component.html',
-    styleUrls: ['navigation.component.scss']
+    templateUrl: 'navigation.component.html'
 })
 
 export class NavigationComponent implements OnInit {
 
     collapse: boolean = true;
 
-    constructor(private router: Router) {
-        
+    constructor(private router: Router, private route: ActivatedRoute) {
+
          }
 
     ngOnInit() { 
 
+    }
+
+    navigate(path) {
+        this.router.navigate([{outlets: {primary: path }}], 
+                             {relativeTo: this.route});
     }
 
 }
