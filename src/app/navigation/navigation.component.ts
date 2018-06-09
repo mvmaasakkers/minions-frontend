@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'navigation',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 
 export class NavigationComponent implements OnInit {
 
-    constructor() { }
+    collapse: boolean = true;
+
+    constructor(private router: Router) {
+        
+         }
 
     ngOnInit() { 
 
