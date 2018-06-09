@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BankService } from '../services/bank.service';
 
 @Component({
     selector: 'dashboard',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-    constructor() { }
+    constructor(private bankService: BankService) { }
 
     ngOnInit() { 
-
+        this.bankService.sync().subscribe(response => {
+            if(response.success) {
+                alert(response.message);
+            }
+        })
     }
 
 }
