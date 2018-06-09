@@ -1,0 +1,28 @@
+/* ==============
+  COUNTER
+===================*/
+
+.savingsCounter {
+  background: $white;
+  height: 60px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+
+  span {
+    font-size: 40px;
+    color: $dark-gray;
+    font-weight: 700;
+    padding:0 10px;
+    border-left:1px solid $border;
+    border-right: 1px solid $border;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+}
