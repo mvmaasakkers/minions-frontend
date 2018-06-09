@@ -12,13 +12,13 @@
 }
 
 .alert-success {
-  color: $success;
-  background-color: lighten($success,30%);
+  color: $white;
+  background-color: $success;
   .alert-link {
-    color: darken($success,10%);
+    color: $white;
   }
   hr {
-    border-top-color: darken($success,10%);
+    border-top-color: $success;
   }
 }
 
