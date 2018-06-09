@@ -1,3 +1,3 @@
-<navigation ngif="navigationvisible"></navigation>
+<navigation *ngIf="!router.isActive('home')"></navigation>
 <alert></alert>
 <router-outlet></router-outlet>

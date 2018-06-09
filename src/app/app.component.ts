@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   
+  navigationVisible: boolean;
   title = 'app';
 
-    constructor(private router: Router){
-
+    constructor(private router: Router, private activeRoute: ActivatedRoute){
+      
     }
 
 }
