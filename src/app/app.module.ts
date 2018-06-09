@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ConvertComponent } from './convert/convert.component';
+import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -24,8 +26,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-    { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
-    { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+  { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
+  { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+  { path: 'convert', component: ConvertComponent, canActivate: [AuthGuard] }, 
+  { path: 'convert/abn', component: ConvertAbnComponent, canActivate: [AuthGuard] }, 
   { path: '**', component: DashboardComponent }
 ];
 
@@ -38,7 +42,9 @@ const routes: Routes = [
       CounterComponent,
       TransactionsComponent,
       HomeComponent,
-      NavigationComponent
+      NavigationComponent,
+      ConvertComponent,
+      ConvertAbnComponent
   ],
   imports: [
     BrowserModule,
