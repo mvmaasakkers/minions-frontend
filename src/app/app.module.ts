@@ -10,11 +10,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './services/auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './services/gaurd.service';
+import {DevicesComponent} from "./devices/devices.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
   { path: '**', component: DashboardComponent }
 ];
 
@@ -22,7 +24,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+      DevicesComponent
   ],
   imports: [
     BrowserModule,

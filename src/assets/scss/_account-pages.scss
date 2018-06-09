@@ -9,22 +9,6 @@
   top: 0;
 }
 
-.wrapper-page {
-  margin: 7.5% auto;
-  max-width: 460px;
-  position: relative;
-
-  .logo-admin {
-    font-size: 28px;
-    line-height: 70px;
-  }
-
-  .card {
-    border: 7px double $primary;
-    border-radius: 10px;
-  }
-}
-
 .user-thumb {
   position: relative;
   z-index: 999;
