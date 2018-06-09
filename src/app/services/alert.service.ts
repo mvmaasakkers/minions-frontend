@@ -28,7 +28,7 @@ export class AlertService {
     }
 
     error(message: string){
-        this.alert("error", message, this.keepAfterRouteChange);
+        this.alert("danger", message, this.keepAfterRouteChange);
     }
 
     alert (type: string, message: string, keepAfterRouteChange = false){
