@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
   { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
   { path: 'convert', component: ConvertComponent, canActivate: [AuthGuard] }, 
-  { path: 'convertAbn', component: ConvertAbnComponent, canActivate: [AuthGuard] }, 
+  { path: 'convert/abn', component: ConvertAbnComponent, canActivate: [AuthGuard] }, 
   { path: '**', component: DashboardComponent }
 ];
 
