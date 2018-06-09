@@ -14,6 +14,7 @@ import { DevicesComponent } from "./devices/devices.component";
 import { TransactionsComponent } from "./transactions/transactions.component";
 import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProgressCounterService } from './services/progress-counter.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -43,6 +44,7 @@ const routes: Routes = [
   ],
   providers: [
     AuthGuard,
+    ProgressCounterService,
     LoginService,
     { provide: ENDPOINT, useValue: 'http://api.styfee.com' }
   ],
