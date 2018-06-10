@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginService, ENDPOINT } from './services/login.service';
+import { NavigationComponent } from './navigation/navigation.component';
+import { HuisComponent } from './huis/huis.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './services/auth/auth.module';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +19,6 @@ import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
-import { NavigationComponent } from './navigation/navigation.component';
 import { AlertService } from './services/alert.service';
 import { AlertComponent } from './alert/alert.component';
 import { UserService } from './services/user.service';
@@ -29,6 +30,7 @@ import { ChallengeListComponent } from './challenge/challenge-list/challenge-lis
 import { OrderByPipe } from './pipes/sort.pipe';
 import { TransactionsListComponent } from './transactions/transactions-list/transactions-list.component';
 import { EurovaluePipe } from './pipes/eurovalue.pipe';
+import { JumbaService } from './services/jumba.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -36,11 +38,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'huis', component: HuisComponent, },
   { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
   { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
   { path: 'convert', component: ConvertComponent, canActivate: [AuthGuard] }, 
   { path: 'convert/abn', component: ConvertAbnComponent, canActivate: [AuthGuard] }, 
-    {path: 'home' , component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', component: DashboardComponent }
 ];
 
@@ -50,17 +52,18 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    DevicesComponent,
-    CounterComponent,
-    TransactionsComponent,
-    HomeComponent,
-    NavigationComponent,
-    ConvertComponent,
-    ConvertAbnComponent,
-    AlertComponent,
-    ChallengeListComponent,
-    TransactionsListComponent,
+      DevicesComponent,
+      CounterComponent,
+      TransactionsComponent,
+      HomeComponent,
+      NavigationComponent,
+      ConvertComponent,
+      ConvertAbnComponent,
+      AlertComponent,
+      ChallengeListComponent,
+      TransactionsListComponent,
     EurovaluePipe,
+      HuisComponent
   ],
   imports: [
     ChartsModule,
@@ -79,7 +82,9 @@ const routes: Routes = [
     AlertService,
     UserService,
     DeviceService,
-    DeductCreditsService
+    DeductCreditsService,
+    JumbaService, 
+    BankService
   ],
   bootstrap: [AppComponent]
 })
