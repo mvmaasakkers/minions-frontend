@@ -19,7 +19,6 @@ import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
-import { NavigationComponent } from './navigation/navigation.component';
 import { AlertService } from './services/alert.service';
 import { AlertComponent } from './alert/alert.component';
 import { UserService } from './services/user.service';
@@ -62,8 +61,7 @@ const routes: Routes = [
       AlertComponent,
       ChallengeListComponent,
       TransactionsListComponent,
-      HuisComponent,
-      NavigationComponent
+      HuisComponent
   ],
   imports: [
     ChartsModule,
@@ -82,7 +80,7 @@ const routes: Routes = [
     AlertService,
     UserService,
     DeviceService,
-    DeductCreditsService
+    DeductCreditsService,
     JumbaService, 
     BankService
   ],

@@ -26,10 +26,3 @@ export class HuisComponent implements OnInit {
     }
 
 }
-
-@Component({
-    selector: 'ngbd-tabset-basic',
-    templateUrl: './huis.component.html',
-    styleUrls: ['./huis.component.scss']
-  })
-  export class NgbdTabsetBasic { }

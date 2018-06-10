@@ -2,7 +2,7 @@
     filter: IFilter;
     input: IInput;
     parameters: IParameter[];
-    payload: IPayload;
+    Payload: IPayload;
     Output: string;
     Private: boolean;
     NoBag: boolean;
