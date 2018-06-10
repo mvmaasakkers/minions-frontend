@@ -23,5 +23,4 @@ export class TransactionsListComponent implements OnInit {
         this.transactions = r;
         })
   }
-
 }
