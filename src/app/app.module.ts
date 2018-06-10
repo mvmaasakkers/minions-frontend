@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, InjectionToken } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -18,6 +19,17 @@ import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
+import { NavigationComponent } from './navigation/navigation.component';
+import { AlertService } from './services/alert.service';
+import { AlertComponent } from './alert/alert.component';
+import { UserService } from './services/user.service';
+import { DeviceService } from './services/device.service';
+import { DeductCreditsService } from './services/deduct-credits.service'
+import { ConvertComponent } from './convert/convert.component';
+import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component';
+import { ChallengeListComponent } from './challenge/challenge-list/challenge-list.component';
+import { OrderByPipe } from './pipes/sort.pipe';
+import { TransactionsListComponent } from './transactions/transactions-list/transactions-list.component';
 import { JumbaService } from './services/jumba.service';
 
 const routes: Routes = [
@@ -26,14 +38,17 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-    { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
-    { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
   { path: 'huis', component: HuisComponent, },
+  { path: 'devices', component: DevicesComponent, canActivate: [AuthGuard] },
+  { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+  { path: 'convert', component: ConvertComponent, canActivate: [AuthGuard] }, 
+  { path: 'convert/abn', component: ConvertAbnComponent, canActivate: [AuthGuard] }, 
   { path: '**', component: DashboardComponent }
 ];
 
 @NgModule({
   declarations: [
+    OrderByPipe,
     AppComponent,
     LoginComponent,
     DashboardComponent,
@@ -41,10 +56,17 @@ const routes: Routes = [
       CounterComponent,
       TransactionsComponent,
       HomeComponent,
+      NavigationComponent,
+      ConvertComponent,
+      ConvertAbnComponent,
+      AlertComponent,
+      ChallengeListComponent,
+      TransactionsListComponent,
       HuisComponent,
       NavigationComponent
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -56,6 +78,11 @@ const routes: Routes = [
     AuthGuard,
     LoginService,
     { provide: ENDPOINT, useValue: 'http://api.styfee.com' },
+    BankService,
+    AlertService,
+    UserService,
+    DeviceService,
+    DeductCreditsService
     JumbaService, 
     BankService
   ],

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BankService } from '../services/bank.service';
+
+
 
 @Component({
     selector: 'transactions',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionsComponent implements OnInit {
 
-    constructor() { }
+    constructor(
+        private bankService: BankService
+    ) { 
+        console.log("ctor");
+    }
 
     ngOnInit() {
-
     }
 
 }

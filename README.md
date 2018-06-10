@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/BeyondBankingDays/minions-frontend?branch=develop)](https://bettercodehub.com/)
+
 # LiveAsAServiceUI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.

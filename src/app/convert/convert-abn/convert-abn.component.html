@@ -1,0 +1,87 @@
+<div class="wrapper">
+
+  <div class="container-fluid">
+
+    <div class="card m-b-30 m-t-30">
+      <div class="card-body">
+
+        <div class="m-b-15">
+          <img src="/assets/images/points/bank-1.jpg" alt="">
+        </div>
+
+        <p class="">Save on your bankproducts like your mortgage or ensurance</p>
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <tbody>
+            <tr *ngFor="let reward of rewards | orderBy:'cost':1" (click)="deduct(reward.cost)">
+              <td>
+                <h6>{{ reward.name}}</h6>
+              </td>
+              <td>
+                <h6 class="text-success float-right">{{ reward.cost}}</h6>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="" class="btn btn-danger btn-lg float-right waves-effect waves-light col-sm-12">Collect rewards</a>
+
+      </div>
+    </div>
+
+    <div class="card m-b-30">
+      <div class="card-body">
+
+        <h4 class="header-title mt-0 m-b-0">
+          Next savingmilestones
+        </h4>
+
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <tbody>
+            <tr>
+              <td>
+                <h6>5% ensurance discount <span class="icon"><i class="fal fal-star"></i></span> </h6>
+              </td>
+              <td>
+                <h6 class="float-right">20.000</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>-0.1% Mortgagerent discount <span class="icon"><i class="fal fal-star"></i></span> </h6>
+              </td>
+              <td>
+                <h6 class="float-right">22.500</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>10% ensurance discount <span class="icon"><i class="fal fal-star"></i></span> </h6>
+              </td>
+              <td>
+                <h6 class="float-right">30.000</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>-0.3% Mortagerent discount <span class="icon"><i class="fal fal-star"></i></span> </h6>
+              </td>
+              <td>
+                <h6 class="float-right">50.000</h6>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="#" class="text-link">See more rewards</a>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -117,3 +117,16 @@
   background: #4653BB;
 }
 
+.house-info {
+  position: absolute;
+  top:215px;
+  width: 300px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .avatar {
+    text-align: center;
+  }
+
+}

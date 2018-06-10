@@ -3,7 +3,6 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
     selector: 'counter',
     templateUrl: 'counter.component.html',
-    
 })
 export class CounterComponent implements OnInit {
 
@@ -12,9 +11,11 @@ export class CounterComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { 
-        this.value.toString()
     }
-
-
-
+    getLetters(){
+        if(this.value) {
+            return this.value.toString().split('');
+        }
+        return ["0"];
+    }
 }
