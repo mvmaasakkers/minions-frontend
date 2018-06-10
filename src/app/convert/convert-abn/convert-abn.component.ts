@@ -19,8 +19,8 @@ export class ConvertAbnComponent implements OnInit {
   }
 
   rewards = [
-    new Reward("0.2% rente korting", 100),
-    new Reward("1% korting op verzekering", 200),
-    new Reward("credit card wallet", 20)
+    new Reward("0.01% Mortgagerent discount", 15000),
+    new Reward("1% Ensurance discount", 10000),
+    new Reward("credit card wallet", 5000)
   ]
 }
