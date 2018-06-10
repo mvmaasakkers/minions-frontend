@@ -27,6 +27,7 @@ import { ConvertComponent } from './convert/convert.component';
 import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component';
 import { ChallengeListComponent } from './challenge/challenge-list/challenge-list.component';
 import { OrderByPipe } from './pipes/sort.pipe';
+import { TransactionsListComponent } from './transactions/transactions-list/transactions-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -57,6 +58,7 @@ const routes: Routes = [
       ConvertAbnComponent,
       AlertComponent,
       ChallengeListComponent,
+      TransactionsListComponent,
   ],
   imports: [
     ChartsModule,
