@@ -16,12 +16,10 @@ export class TransactionsListComponent implements OnInit {
   constructor(private bankService: BankService) { }
 
   ngOnInit() {
-    this.bankService.accounts().subscribe(r => console.log("accounts", r));
-    this.bankService.get(accId).subscribe(
-      r =>  {        console.log(r)      })
+    //this.bankService.accounts().subscribe(r => console.log("accounts", r));
     this.bankService.transactions(accId).subscribe(
         r =>  {
-          console.log(r);
+          // console.log(r);
         this.transactions = r;
         })
   }

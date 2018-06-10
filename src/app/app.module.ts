@@ -28,6 +28,7 @@ import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component
 import { ChallengeListComponent } from './challenge/challenge-list/challenge-list.component';
 import { OrderByPipe } from './pipes/sort.pipe';
 import { TransactionsListComponent } from './transactions/transactions-list/transactions-list.component';
+import { EurovaluePipe } from './pipes/eurovalue.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -49,16 +50,17 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-      DevicesComponent,
-      CounterComponent,
-      TransactionsComponent,
-      HomeComponent,
-      NavigationComponent,
-      ConvertComponent,
-      ConvertAbnComponent,
-      AlertComponent,
-      ChallengeListComponent,
-      TransactionsListComponent,
+    DevicesComponent,
+    CounterComponent,
+    TransactionsComponent,
+    HomeComponent,
+    NavigationComponent,
+    ConvertComponent,
+    ConvertAbnComponent,
+    AlertComponent,
+    ChallengeListComponent,
+    TransactionsListComponent,
+    EurovaluePipe,
   ],
   imports: [
     ChartsModule,
