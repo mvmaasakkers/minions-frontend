@@ -13,15 +13,12 @@
               <tbody>
                 <tr>
                   <td>
-                    <span class="tableIcon"></span>
-                  </td>
-                  <td>
                     <span class="transactionDesciption">
                       {{ transaction.details.description}}
                       {{ transaction.other_account.holder.name }}
                     </span>
                   </td>
-                  <td>
+                  <td width="100">
                     <span class="transactionValue negative" [innerHtml]="transaction.details.value.amount | eurovalue"></span>
                   </td>
                 </tr>
