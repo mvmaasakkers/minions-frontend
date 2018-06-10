@@ -2,11 +2,14 @@
     <table class="table table-hover">
       <tbody>
       <tr *ngFor="let challenge of challenges | orderBy:'points':true">
+          <td>
+              <i *ngIf="challenge.done" class="fal fa-check text-success"></i>
+          </td>
           <td><h6>{{ challenge.name}}</h6></td>
           <td>
               <div class="btn-group float-right">
-                  <button class="btn btn-light waves-effect text-success" (click)="collect(challenge)">+{{ challenge.points }}</button>
-              </div>
+                  <button class="btn btn-light btn-lg waves-effect" [ngClass]="{'text-success': !challenge.done}" [disabled]="challenge.done" (click)="collect(challenge)">+{{ challenge.points }}</button>                  
+                </div>
           </td>
       </tr>
       </tbody>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChallengeService } from '../../services/challenge.service';
 import { IChallenge } from '../../services/IChallenge';
 import { IAlert, AlertService } from '../../services/alert.service';
@@ -10,6 +10,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./challenge-list.component.css']
 })
 export class ChallengeListComponent implements OnInit {
+
+  @Output() update = new EventEmitter();
 
   public challenges: IChallenge[];
 
@@ -35,5 +37,6 @@ export class ChallengeListComponent implements OnInit {
       this.alertService.error("Somthing went wrong!!");
     });
     this.getChallenges();
+    this.update.emit();
   }
 }
