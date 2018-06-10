@@ -29,6 +29,7 @@ import { ConvertAbnComponent } from './convert/convert-abn/convert-abn.component
 import { ChallengeListComponent } from './challenge/challenge-list/challenge-list.component';
 import { OrderByPipe } from './pipes/sort.pipe';
 import { TransactionsListComponent } from './transactions/transactions-list/transactions-list.component';
+import { EurovaluePipe } from './pipes/eurovalue.pipe';
 import { JumbaService } from './services/jumba.service';
 
 const routes: Routes = [
@@ -61,6 +62,7 @@ const routes: Routes = [
       AlertComponent,
       ChallengeListComponent,
       TransactionsListComponent,
+    EurovaluePipe,
       HuisComponent
   ],
   imports: [

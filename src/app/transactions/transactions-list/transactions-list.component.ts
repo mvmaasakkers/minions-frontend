@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BankService } from '../../services/bank.service';
 import { ITransaction } from '../../services/ITransaction';
 
-const accId: string = "NLABNA0815453539";
+const accId: string = "NLABNA0960275106";
 
 @Component({
   selector: 'transactions-list',
@@ -16,11 +16,12 @@ export class TransactionsListComponent implements OnInit {
   constructor(private bankService: BankService) { }
 
   ngOnInit() {
-    this.bankService.accounts().subscribe(r => console.log("accounts", r));
+    //this.bankService.accounts().subscribe(r => console.log("accounts", r));
     this.bankService.transactions(accId).subscribe(
         r =>  {
-          console.log(r)
+          // console.log(r);
         this.transactions = r;
         })
   }
+
 }
