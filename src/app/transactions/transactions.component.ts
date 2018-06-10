@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BankService } from '../services/bank.service';
 
 
-const accId: string = "NLABNA0815453539";
 
 @Component({
     selector: 'transactions',
@@ -17,13 +16,6 @@ export class TransactionsComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log("init");
-        //this.bankService.accounts().subscribe(
-        //    r => console.log(r)
-        //)
-        this.bankService.transactions(accId).subscribe(
-            r => console.log(r)
-        )
     }
 
 }
