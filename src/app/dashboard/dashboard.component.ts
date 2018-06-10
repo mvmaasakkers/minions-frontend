@@ -35,10 +35,10 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit() { 
         
+        
         this.userService.get().subscribe(response => {
             this.user = response;
         }, () => {}, () => this.isLoading = false);
-
 
         this.bankService.sync().subscribe(response => {
             if(response.success) {
@@ -47,4 +47,10 @@ export class DashboardComponent implements OnInit {
         })
     }
 
+
+    update(){
+        this.userService.get().subscribe(response => {
+            this.user = response;
+        }, () => {}, () => this.isLoading = false);
+    }
 }
