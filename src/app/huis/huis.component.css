@@ -72,10 +72,9 @@
 }
 
 .img {
-  background-color: grey;
-  background-image: url(../../assets/images/huis.png);
   height: 249px;
   width: 375px;
+  margin-top: -30px;
   margin-bottom: 30px;
 }
 

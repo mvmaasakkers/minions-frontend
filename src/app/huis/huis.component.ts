@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JumbaService } from '../services/jumba.service';
+import { IJumba } from '../services/IJumba';
 
 @Component({
     selector: 'huis',
@@ -8,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class HuisComponent implements OnInit {
 
-    constructor() { }
-
+    constructor(private jumbaService: JumbaService) { }
+    jumbaData: IJumba;
     ngOnInit() { 
+        this.jumbaService.get('6988CK25').subscribe(response => {
+            this.jumbaData = response;
+            console.log(response);
 
+        });
+    }
+    getImage(jumbaDataNew: IJumba){
+        if (jumbaDataNew){
+            return jumbaDataNew.Payload.Images[0];
+        }
     }
 
 }

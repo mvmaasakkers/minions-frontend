@@ -18,6 +18,7 @@ import { CounterComponent } from './dashboard/counter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BankService } from './services/bank.service';
+import { JumbaService } from './services/jumba.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
@@ -55,6 +56,7 @@ const routes: Routes = [
     AuthGuard,
     LoginService,
     { provide: ENDPOINT, useValue: 'http://api.styfee.com' },
+    JumbaService, 
     BankService
   ],
   bootstrap: [AppComponent]
