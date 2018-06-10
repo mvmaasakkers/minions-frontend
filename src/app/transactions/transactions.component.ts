@@ -10,6 +10,8 @@ const accId: string = "NLABNA0960275106";
 })
 export class TransactionsComponent implements OnInit {
 
+    public currentBalance: number;
+
     constructor(
         private bankService: BankService
     ) {
