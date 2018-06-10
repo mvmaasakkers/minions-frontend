@@ -10,7 +10,7 @@ export class EurovaluePipe implements PipeTransform {
       //value = -123.45;
       var isNeg = value < 0;
       value = Math.abs(value);
-      console.log("tr ", value)
+      //console.log("tr ", value)
       var cents = (value * 100) % 100;
       var s = "00";
       s = cents.toString() + s;
@@ -20,7 +20,7 @@ export class EurovaluePipe implements PipeTransform {
       if (isNeg) {
         r = "-" + r; 
       }
-      console.log("r = ", r);
+      //console.log("r = ", r);
       return r;
     }
     return "";
