@@ -5,13 +5,27 @@
 
         <div class="row">
 
+            <div class="col-md-12">
+                <div class="card bg-success m-b-30">
+                    <div class="card-body text-center">
+                        <span class="icon text-white"><i class="fal fa-star"></i></span>
+                        <h6 class="text-white">Your neighborhood improved 5% last month in separating waste, good job!!</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
             <div class="col-md-12 col-lg-6 col-xl-6">
                 <div class="card m-b-30">
                     <div class="card-body">
 
-                        <h3 class="text-center header-title mt-0 m-b-15">
-                            My ENERGY PROFILE
+                        <h3 class="text-center header-title mt-0 m-b-0">
+                            MY HOUSEHOLD ENERGYLABEL
                         </h3>
+<<<<<<< HEAD
 
                         <div class="p-3">
                             <div style="display: block">
@@ -22,10 +36,41 @@
                                         (chartHover)="chartHovered($event)"
                                         (chartClick)="chartClicked($event)"></canvas>
                             </div>
+=======
+                        <p class="text-center text-success"><strong>You have a A+ energy rating</strong></p>
+
+                        <div class="chartWrapper">
+
+                            <div class="house-info">
+                                <div class="avatar">
+                                    <img src="assets/images/house-3.jpg" alt="My House">
+                                </div>
+
+                                <h4 class="text-center">Meerkoet 25</h4>
+                                <p class="text-center">6988CK Lathum</p>
+                            </div>
+
+                            <canvas height="340" baseChart
+                                [data]="doughnutChartData"
+                                [labels]="doughnutChartLabels"
+                                [chartType]="doughnutChartType"
+                                [colors]="lineChartColors"
+                                [legend]="false"
+                                [options]="options"
+                                ></canvas>
+>>>>>>> develop
                         </div>
 
+                        <h3 class="header-title">
+                            GETGREEN MILESTONES
+                        </h3>
+                        <challenge-list (update)="update()"></challenge-list>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                
             </div>
 
             <div class="col-md-12 col-lg-6 col-xl-6">
@@ -35,14 +80,13 @@
                         <h3 class="text-center header-title mt-0 m-b-15">
                             SAVING TARGETS
                         </h3>
-
                         <div class="p-3">
-                            <counter value="55555"></counter>
+                            <counter *ngIf="!isLoading" [value]="user.score.current"></counter>
                             <ngb-progressbar class="progressCounter m-b-10" type="custom" min="0" max="100" [value]="80"></ngb-progressbar>
                             <p class="float-right">125 points to go!</p>
                         </div>
 
-                        <a class="footerButton">Convert your points</a>
+                        <a href="/convert" class="footerButton text-white">Convert your points</a>
 
                     </div>
                 </div>
@@ -83,7 +127,65 @@
         <div class="card m-b-30">
             <div class="card-body">
 
+<<<<<<< HEAD
                 <button type="button" id="addDevice" class="btn btn-outline-secondary wave-effect float-right">Add device</button>
+=======
+                <a href="" class="btn btn-warning wave-effect float-right">Your rank 3</a>
+
+                <h3 class="header-title mt-0 pb-3">
+                    NEIGHBORHOOD
+                </h3>
+
+                <div class="clearfix"></div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <td width="40"><img class="rounded-circle" src="assets/images/house-1.jpg" alt="House 1" width="40"></td>
+                            <td>
+                                <h6 class="float-left">Family Jansen</h6>
+                            </td>
+                            <td>
+                                <h6 class="m-0 float-left text-center text-success">
+                                    <span>+11%</span>
+                                </h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="40"><img class="rounded-circle" src="assets/images/house-2.jpg" alt="House 2" width="40"></td>
+                            <td><h6 class="float-left">Family Evers</h6></td>
+                            <td>
+                                <h6 class="m-0 float-left text-center text-success">
+                                    <span>+10%</span>
+                                </h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="40"><img class="rounded-circle" src="assets/images/house-3.jpg" alt="House 3" width="40"></td>
+                            <td><h6 class="float-left">Your family</h6></td>
+                            <td>
+                                <h6 class="m-0 float-left text-center text-success">
+                                    <span>+8%</span>
+                                </h6>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-sm-12 text-center">
+                    <a href="/devices" class="text-link">See all</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card m-b-30">
+            <div class="card-body">
+
+                <a href="" class="btn btn-outline-secondary wave-effect float-right">Add device</a>
+>>>>>>> develop
 
                 <h3 class="header-title mt-0 pb-3">
                     Popular devices
@@ -93,7 +195,7 @@
                     <table class="table table-hover">
                         <tbody>
                             <tr>
-                                <td><img class="rounded-circle" src="assets/images/devices/device_01_sm.jpg" alt="Sonos speakers : livingroom" width="40"></td>
+                                <td width="40"><img class="rounded-circle" src="assets/images/devices/device_01_sm.jpg" alt="Sonos speakers : livingroom" width="40"></td>
                                 <td><h6>Sonos speakers : livingroom</h6></td>
                                 <td>
                                     <div class="btn-group float-right">
@@ -103,7 +205,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><img class="rounded-circle" src="assets/images/devices/device_02_sm.jpg" alt="Nest Thermostat" width="40"></td>
+                                <td width="40"><img class="rounded-circle" src="assets/images/devices/device_02_sm.jpg" alt="Nest Thermostat" width="40"></td>
                                 <td><h6>Nest Thermostat</h6></td>
                                 <td>
                                     <div class="btn-group float-right">
@@ -113,7 +215,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><img class="rounded-circle" src="assets/images/devices/device_03_sm.jpg" alt="Aeon Labs - Front door sensor" width="40"></td>
+                                <td width="40"><img class="rounded-circle" src="assets/images/devices/device_03_sm.jpg" alt="Aeon Labs - Front door sensor" width="40"></td>
                                 <td><h6>Aeon Labs - Front door sensor</h6></td>
                                 <td>
                                     <div class="btn-group float-right">
@@ -123,7 +225,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><img class="rounded-circle" src="assets/images/devices/device_04_sm.jpg" alt="The Hydrao Smart Shower" width="40"></td>
+                                <td width="40"><img class="rounded-circle" src="assets/images/devices/device_04_sm.jpg" alt="The Hydrao Smart Shower" width="40"></td>
                                 <td><h6>The Hydrao Smart Shower</h6></td>
                                 <td>
                                     <div class="btn-group float-right">
@@ -133,7 +235,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><img class="rounded-circle" src="assets/images/devices/device_05_sm.jpg" alt="Zonnepanelen" width="40"></td>
+                                <td width="40"><img class="rounded-circle" src="assets/images/devices/device_05_sm.jpg" alt="Zonnepanelen" width="40"></td>
                                 <td><h6>Zonnepanelen</h6></td>
                                 <td>
                                     <div class="btn-group float-right">

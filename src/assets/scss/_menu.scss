@@ -6,9 +6,13 @@
 body {
   padding-bottom: 65px;
 }
+.navbar {
+  background-color:$white;
+}
+
 
 .wrapper {
-  padding-top: 120px;
+  padding-top: 30px;
 }
 
 .page-title-box {
@@ -489,7 +493,7 @@ body {
 }
 @media (max-width: 991px) {
   .wrapper {
-    padding-top: 60px;
+    padding-top: 30px;
   }
   .container-fluid {
     width: 100%;

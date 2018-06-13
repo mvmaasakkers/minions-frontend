@@ -1,0 +1,156 @@
+<div class="myhome">
+    <div class="wrapper">
+        <div class="container-fluid">
+
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <h4 class="header-title mt-0 pb-3">My Home</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+                <!-- <div class="img"></div> -->
+                <div class="img"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+
+                    <!-- Simple card -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4 class="header-title mt-0 pb-3">My devices</h4>
+                            <div class="button-items">
+                                <div class="row">
+                                    <button type="button" class="btn btn-outline-secondary">Lights</button>
+                                    <button type="button" class="btn btn-outline-secondary">Heating</button>
+                                    <button type="button" class="btn btn-outline-secondary">Doors</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-outline-secondary">Windows</button>
+                                    <button type="button" class="btn btn-outline-secondary">Sensors</button>
+                                    <button type="button" class="btn btn-outline-secondary">Security</button>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-outline-secondary">Vision</button>
+                                    <button type="button" class="btn btn-outline-secondary">Sound</button>
+                                    <button type="button" class="btn btn-outline-secondary">Curtains</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end col -->
+
+            </div>
+            <ngb-tabset>
+                <ngb-tab title="Address">
+                    <ng-template ngbTabContent>
+                        <div class="tab-huis">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Street
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {{jumbaData.Payload.Main.Street}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Number
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {{jumbaData.Payload.Main.Number}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Postcode
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {{jumbaData.Payload.Main.Postcode.P6}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    City
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {{jumbaData.Payload.Main.City}}
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>General</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="tab-huis">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Type
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    Villa
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Built
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {{jumbaData.Payload.Built}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Function
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {{jumbaData.Payload.Function}}
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Dimensions</ng-template>
+                    <ng-template ngbTabContent>
+                        <div class="tab-huis">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Size
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    {{jumbaData.Payload.Size}} m2
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Volume
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    280 m3
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    External storage
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    10 m2
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end wrapper -->
+
+</div>

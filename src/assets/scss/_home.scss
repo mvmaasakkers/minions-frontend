@@ -1,0 +1,151 @@
+/* ==============
+  Homepage
+===================*/
+
+/* NAVIGATION */
+.globalNav {
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  right: 0;
+  z-index: 500;
+  height: 50px;
+  perspective: 2000px;
+
+  .container-lg {
+    padding: 0;
+  }
+
+  .navRoot {
+    position: relative;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* GLOBAL CONTENT */
+.globalContent {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  overflow:hidden;
+  background-color:$white;
+}
+
+main {
+  position: relative;
+  display: block;
+
+  header {
+    position: relative;
+  }
+}
+
+.myHome {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transform: skeyY(-12deg);
+  transform: skewY(-12deg);
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+  background-color:$white;
+
+  span {
+    height:40px;
+    position:absolute;
+  }
+
+  .one {
+    width:50%;
+    left: 50px;
+    top: 40px;
+    background:#4c29ff;
+  }
+
+  .two {
+    width: 14%;
+    right: 0;
+    bottom: 40px;
+    background: #2be7ff;
+  }
+
+  .three {
+    width:25%;
+    bottom:0;
+    right:0;
+    background:#a1ffc8;
+  }
+}
+
+#intro {
+  position: relative;
+
+  .container-lg {
+    padding:70px 20px 100px 20px;
+  }
+
+  h1 {
+    font-size:32px;
+    font-weight: 400;
+    margin-top:40px;
+  }
+
+  ul {
+    display: flex;
+    margin-top: 15px;
+    padding:0;
+
+    li {
+      display: list-item;
+      list-style: none;
+      padding: 0;
+      margin:0;
+    }
+  }
+}
+
+#app-illustrations {
+  top:1127px;
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  width:1287px;
+  left: 50%;
+  margin-left:-644px;
+  transform: scale(.5) rotate(-12deg) translateX(50px);
+  transform-origen: 50% 20%;
+
+  div {
+    display:flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items:center;
+    border-radius:38px;
+    background:$white;
+    box-shadow:inset 0 4px 7px 1px #fff, inset 0 -5px 20px rgba(173,186,204,.25), 0 2px 6px rgba(0,21,64,.14), 0 10px 20px rgba(0,21,64,.05);
+  }
+
+  .tablet-landscape {
+    width:512px;
+    height:352px;
+    margin:115px 50px 0;
+  }
+
+  .phone-small {
+    order: 1;
+    width:225px;
+    height:467px;
+  }
+}
+
+#primary {
+  background-color:$white;
+  padding:40px 20px 175px 20px;
+}

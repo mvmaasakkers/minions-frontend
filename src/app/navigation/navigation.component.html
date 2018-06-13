@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand"  [routerLink]="['dashboard']"><img src="assets/images/logo-colour.svg" height="24" alt="logo"></a>
+    <button class="navbar-toggler" (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"
+            [routerLinkActive]="['active']">
+          <a class="nav-link"
+             [routerLink]="['dashboard']">Dashboard
+          </a>
+        </li>
+        <li class="nav-item"
+            [routerLinkActive]="['active']">
+          <a class="nav-link"
+             [routerLink]="['devices']">My Devices
+          </a>
+        </li>
+        <li class="nav-item"
+            [routerLinkActive]="['active']">
+          <a class="nav-link"
+             [routerLink]="['transactions']">My Transactions
+          </a>
+        </li>
+        <li class="nav-item"
+            [routerLinkActive]="['active']">
+          <a class="nav-link"
+             [routerLink]="['convert']">Spend Points
+          </a>
+        </li>
+        <li class="nav-item"
+            [routerLinkActive]="['active']">
+          <a class="nav-link"
+             [routerLink]="['huis']">My Home
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
