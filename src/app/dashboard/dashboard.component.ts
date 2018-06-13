@@ -4,12 +4,15 @@ import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
 import { IUser } from '../services/IUser';
 import { Observable } from 'rxjs';
+import {JumbaService} from "../services/jumba.service";
+import {IJumba} from "../services/IJumba";
 
 @Component({
     selector: 'dashboard',
     templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
+
     options = { tooltips: { enabled: false },
         cutoutPercentage: 75
     }
